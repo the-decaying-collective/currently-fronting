@@ -17,7 +17,7 @@ interface SystemPrivacy {
 interface System {
   id: string
   uuid: string
-  name: string
+  name: string | null
   description: string | null
   tag: string
   pronouns: string | null

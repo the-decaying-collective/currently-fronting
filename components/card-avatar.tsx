@@ -2,7 +2,7 @@ import { AvatarPosition } from '../utils/types'
 import { resizeMedia } from '../utils/discord-cdn-handling'
 
 interface CardAvatarProps {
-  name: string
+  name: string | null
   avatar_url: string
   color: string
   avatarPosition: AvatarPosition
@@ -28,7 +28,7 @@ const CardAvatar = (props: CardAvatarProps) => {
     <img
       className={`h-48 w-48 border-4 object-cover rounded ${floatClass}`}
       src={resizedAvatarURL}
-      alt={`Avatar for ${name}`}
+      alt={(name && `Avatar for ${name}`) || ''}
       style={{
         borderColor: `#${color}`,
       }}
