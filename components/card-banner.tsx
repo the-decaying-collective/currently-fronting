@@ -2,7 +2,7 @@ import { resizeMedia } from '../utils/discord-cdn-handling'
 
 interface CardBannerProps {
   banner: string
-  name: string
+  name: string | null
   children?: React.ReactNode
 }
 
@@ -22,7 +22,7 @@ const CardBanner = (props: CardBannerProps) => {
     <img
       className='h-48 min-w-full object-cover mx-auto rounded'
       src={resizedBannerURL}
-      alt={`Banner for ${name}`}
+      alt={(name && `Banner for ${name}`) || ''}
       width={600}
       height={240}
     />

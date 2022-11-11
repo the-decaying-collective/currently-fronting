@@ -28,12 +28,14 @@ const Card = (props: CardProps) => {
     <div className={cardClasses}>
       {banner && bannerPosition === 'text' && (
         <CardBanner banner={banner} name={name}>
-          <CardText
-            className='text-xl font-bold'
-            embed={false}
-            htmlReactParserOptions={htmlReactParserOptions}
-            text={name}
-          />
+          {name && (
+            <CardText
+              className='text-xl font-bold'
+              embed={false}
+              htmlReactParserOptions={htmlReactParserOptions}
+              text={name}
+            />
+          )}
           {display_name && (
             <CardText
               className='text-lg italic'
@@ -67,12 +69,14 @@ const Card = (props: CardProps) => {
         <div>
           {(!banner || bannerPosition !== 'text') && (
             <div>
-              <CardText
-                className='text-xl font-bold'
-                embed={false}
-                htmlReactParserOptions={htmlReactParserOptions}
-                text={name}
-              />
+              {name && (
+                <CardText
+                  className='text-xl font-bold'
+                  embed={false}
+                  htmlReactParserOptions={htmlReactParserOptions}
+                  text={name}
+                />
+              )}
               {display_name && (
                 <CardText
                   className='text-lg italic'
